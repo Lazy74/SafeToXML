@@ -121,6 +121,15 @@ namespace SafeToXML
 
         private void button3_Click(object sender, EventArgs e)
         {
+            DataRow datarow = MyDataSet.Tables[0].NewRow();
+            datarow[0] = dataGridView1.CurrentRow.Cells[0].Value;
+            datarow[1] = textBox1.Text.Trim();
+            datarow[2] = textBox2.Text.Trim();
+            datarow[3] = textBox3.Text.Trim();
+            datarow[4] = textBox4.Text.Trim();
+
+            MyDataSet.
+                //MyDataSet.Tables[0].Rows.Add(datarow);
 
         }
     }
