@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<NewDataSet>
+  <people>
+    <id></id>
+    <name></name>
+    <fname></fname>
+    <age></age>
+    <phone></phone>
+  </people>
+</NewDataSet>
