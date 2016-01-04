@@ -93,6 +93,21 @@ namespace SafeToXML
             dataGridView1.DataSource = MyDataSet.Tables[0];
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyUp(object sender, KeyEventArgs e)
+        {
+        }
     }
 }
