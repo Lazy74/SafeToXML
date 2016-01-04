@@ -95,7 +95,16 @@ namespace SafeToXML
 
         private void button2_Click(object sender, EventArgs e)
         {
+            DataRow current = ((DataRowView)dataGridView1.CurrentRow.DataBoundItem).Row;
+            current.Delete();
 
+            MyDataSet.WriteXml(sCurDir + @"\my.xml", XmlWriteMode.WriteSchema);
+            MyDataSet = new DataSet();
+            //Вновь загружаем сохраненные данные
+            MyDataSet.ReadXml(sCurDir + @"\my.xml", XmlReadMode.Auto);
+            MyDatatable = MyDataSet.Tables[0];
+
+            dataGridView1.DataSource = MyDataSet.Tables[0];
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -108,6 +117,11 @@ namespace SafeToXML
 
         private void textBox3_KeyUp(object sender, KeyEventArgs e)
         {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
