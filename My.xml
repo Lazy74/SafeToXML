@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <NewDataSet>
- <dog>
-  <id></id>
-  <name></name>
-  <pic></pic>
-  <picext></picext>
-  <price></price>
- </dog>
+  <people>
+    <id></id>
+    <name></name>
+    <fname></fname>
+    <age></age>
+    <phone></phone>
+  </people>
 </NewDataSet>
