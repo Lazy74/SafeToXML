@@ -121,15 +121,26 @@ namespace SafeToXML
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DataRow datarow = MyDataSet.Tables[0].NewRow();
-            datarow[0] = dataGridView1.CurrentRow.Cells[0].Value;
+
+            var nado = dataGridView1.CurrentRow.Index;
+            var datarow = MyDataSet.Tables[0].Rows[nado];
+            
             datarow[1] = textBox1.Text.Trim();
             datarow[2] = textBox2.Text.Trim();
             datarow[3] = textBox3.Text.Trim();
             datarow[4] = textBox4.Text.Trim();
 
-            MyDataSet.
-                //MyDataSet.Tables[0].Rows.Add(datarow);
+
+            MyDataSet.WriteXml(sCurDir + @"\my.xml", XmlWriteMode.WriteSchema);
+            MyDataSet = new DataSet();
+            //Вновь загружаем сохраненные данные
+            MyDataSet.ReadXml(sCurDir + @"\my.xml", XmlReadMode.Auto);
+            MyDatatable = MyDataSet.Tables[0];
+
+            dataGridView1.DataSource = MyDataSet.Tables[0];
+
+            //MyDataSet.
+            //MyDataSet.Tables[0].Rows.Add(datarow);
 
         }
     }
